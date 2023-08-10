@@ -1,0 +1,10 @@
+{
+  "env": "development",
+  "db": {
+    "db_host": "go-editor-db:3306",
+    "conn": "root:root123@tcp(go-editor-db:3306)/code_db"
+  },
+  "server": {
+    "port": 8080
+  }
+}
