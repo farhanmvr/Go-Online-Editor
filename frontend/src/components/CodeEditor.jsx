@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import AceEditor from "react-ace";
 import "ace-builds/src-noconflict/mode-golang";
 import "ace-builds/src-noconflict/theme-github";
+import "ace-builds/src-noconflict/ext-language_tools"
 
 // CodeEditor for golang code
 const CodeEditor = ({ code, onChange }) => {
