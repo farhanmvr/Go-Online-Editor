@@ -31,9 +31,9 @@ start:
 	make frontend-build
 	docker-compose down
 	docker-compose up -d
-	@echo "###########################################################"
-	@echo "## Click here to view the website: http://localhost:3333 ##"
-	@echo "###########################################################"
+	@echo "###############################################################"
+	@echo "## Click the link to view the website: http://localhost:3333 ##"
+	@echo "###############################################################"
 
 stop:
 	docker-compose down
