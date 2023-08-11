@@ -22,7 +22,7 @@ func main() {
 	db.InitDB()            // Initialize database connection
 	db.PerformMigrations() // Apply migrations
 
-	// Create a new CORS handler with desired options
+	// Create a new CORS handler (Prevent CORS error when request coming from locally hosted frontend)
 	c := cors.New(cors.Options{
 		AllowedOrigins:   []string{"http://localhost:3000", "http://localhost:3333"},
 		AllowedMethods:   []string{"GET", "POST", "PUT", "DELETE"},

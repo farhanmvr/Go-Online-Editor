@@ -20,6 +20,7 @@ const (
 	defaultRetryInterval = 3
 )
 
+// Initialize the db
 func InitDB() {
 	config := config2.GetConfig()
 	var err error
@@ -50,6 +51,7 @@ func InitDB() {
 	}
 }
 
+// Perform migration
 func PerformMigrations() {
 	driver, err := mysql.WithInstance(db, &mysql.Config{})
 	if err != nil {
@@ -77,6 +79,7 @@ func GetDB() *sql.DB {
 	return db
 }
 
+// Insert code snippet into db
 func InsertCodeSnippet(code, name, status string) (*models.CodeSnippet, error) {
 	id := uuid.New().String()
 	query := "INSERT INTO code_snippets (id,name,code,status) VALUES (?,?,?,?)"
@@ -87,6 +90,7 @@ func InsertCodeSnippet(code, name, status string) (*models.CodeSnippet, error) {
 	return GetCodeSnippetById(id)
 }
 
+// Get all code snippets from db
 func GetAllCodeSnippets() ([]*models.CodeSnippet, error) {
 	rows, err := db.Query("SELECT * FROM code_snippets")
 	if err != nil {
@@ -115,6 +119,7 @@ func GetAllCodeSnippets() ([]*models.CodeSnippet, error) {
 	return snippets, nil
 }
 
+// Get a single code snippet by id
 func GetCodeSnippetById(id string) (*models.CodeSnippet, error) {
 	codeSnippet := models.CodeSnippet{}
 
@@ -133,6 +138,7 @@ func GetCodeSnippetById(id string) (*models.CodeSnippet, error) {
 	return &codeSnippet, nil
 }
 
+// Delete code snippet by id
 func DeleteSnippetById(id string) (int64, error) {
 	query := "DELETE FROM code_snippets WHERE id = ?"
 	result, err := db.Exec(query, id)

@@ -4,6 +4,7 @@ import moment from "moment";
 import { useEffect, useState } from "react";
 import { baseURL } from "../constants";
 
+// Fetch all saved code snippets from db and show then in table
 const ExecutionList = ({
   isExecutionModalVisible,
   setIsExecutionModalVisible,
@@ -12,6 +13,7 @@ const ExecutionList = ({
   const [isLoading, setIsLoading] = useState(false);
   const [savedCodes, setSavedCodes] = useState([]);
 
+  // Get all saved codes from backend
   const fetchSavedCodes = async () => {
     setSavedCodes([]);
     setIsLoading(true);
@@ -29,6 +31,7 @@ const ExecutionList = ({
     }
   };
 
+  // Delete a saved code by id
   const deleteCode = async (id) => {
     setIsLoading(true);
     try {

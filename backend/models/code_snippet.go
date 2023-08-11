@@ -2,6 +2,7 @@ package models
 
 import "time"
 
+// CodeSnippet contract
 type CodeSnippet struct {
 	ID          string    `json:"id"`
 	Name        string    `json:"name"`

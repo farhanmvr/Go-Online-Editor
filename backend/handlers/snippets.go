@@ -13,6 +13,7 @@ type GetAllCodeSnippetsResponse struct {
 	Error        *string                `json:"error,omitempty"`
 }
 
+// Get all code snippets from db
 func GetAllCodeSnippetsHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	var response GetAllCodeSnippetsResponse

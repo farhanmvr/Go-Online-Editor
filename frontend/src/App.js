@@ -16,6 +16,7 @@ const App = () => {
   const [isSaving, setIsSaving] = useState(false);
   const [name, setName] = useState("");
 
+  // Run code
   const executeCode = async () => {
     setExecResult({});
     setIsExecuting(true);
@@ -34,6 +35,7 @@ const App = () => {
     }
   };
 
+  // Save code to db
   const saveCode = async () => {
     setExecResult({});
     setIsSaving(true);
@@ -61,6 +63,7 @@ const App = () => {
 
   return (
     <div className="app">
+      {/* Header button section */}
       <div className="d-flex justify-content-end p-3">
         <Button
           onClick={() => setIsExecutionModalVisible(true)}
@@ -90,12 +93,15 @@ const App = () => {
       </div>
       <div className="row">
         <div className="col code-editor pe-0">
+          {/* Golang code Editor */}
           <CodeEditor code={code} onChange={setCode} />
         </div>
         <div className="col code-output px-0">
+          {/* Golang code output area */}
           <OutputSection execResult={execResult} />
         </div>
       </div>
+      {/* Execution list modal */}
       {isExecutionModalVisible && (
         <ExecutionList
           onSelect={(val) => {
@@ -106,6 +112,7 @@ const App = () => {
           setIsExecutionModalVisible={setIsExecutionModalVisible}
         />
       )}
+      {/* Popup for providing name while saving a code */}
       <Modal
         title="Enter a name to your code"
         open={isNameModalVisible}

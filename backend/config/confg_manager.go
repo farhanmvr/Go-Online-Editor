@@ -25,6 +25,7 @@ func GetConfig() *Config {
 	return config
 }
 
+// Load the config from config.json
 func LoadConfig() error {
 	file, err := os.Open("config/config.json")
 	if err != nil {

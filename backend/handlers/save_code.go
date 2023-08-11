@@ -19,6 +19,7 @@ type SaveCodeResponse struct {
 	Error       *string             `json:"error,omitempty"`
 }
 
+// This handler will save code into db [Only successfull compiled codes are stored in db]
 func SaveCodeHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 
@@ -49,6 +50,7 @@ func SaveCodeHandler(w http.ResponseWriter, r *http.Request) {
 		json.NewEncoder(w).Encode(response)
 		return
 	}
+	// Return in case of any error (not storing in db)
 	if result.Error != nil {
 		status = "fail"
 		response.Error = result.Output

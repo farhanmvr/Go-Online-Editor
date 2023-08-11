@@ -1,5 +1,6 @@
 import React from "react";
 
+// This will show output/error of given code
 const OutputSection = ({ execResult }) => {
   return (
     <div className="output-section">

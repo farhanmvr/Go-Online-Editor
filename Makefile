@@ -26,6 +26,7 @@ backend-stop:
 
 # All
 
+# Start frontend,backend,db containers
 start:
 	make backend-build
 	make frontend-build

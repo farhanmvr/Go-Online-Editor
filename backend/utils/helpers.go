@@ -11,6 +11,7 @@ type GoRunResponse struct {
 	Error  *string `json:"error,omitempty"`
 }
 
+// Helper function to run go code
 func RunGoCode(code string) (*GoRunResponse, error) {
 	// Create a temporary file to save the code
 	tempFile, err := os.CreateTemp("", "temp-*.go")

@@ -18,6 +18,7 @@ type ExecuteRequest struct {
 	Code *string `json:"code"`
 }
 
+// This handler will execute the go code and return output response
 func ExecuteCodeHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	time := time.Now()

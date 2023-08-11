@@ -3,6 +3,7 @@ import AceEditor from "react-ace";
 import "ace-builds/src-noconflict/mode-golang";
 import "ace-builds/src-noconflict/theme-github";
 
+// CodeEditor for golang code
 const CodeEditor = ({ code, onChange }) => {
   return (
     <>
