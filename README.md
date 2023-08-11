@@ -19,7 +19,6 @@ Before you start, ensure you have the following dependencies installed:
 ```bash
 git clone https://github.com/farhanmvr/Go-Online-Editor.git
 cd Go-Online-Editor
-sudo make start
 ```
 
 2. Build and run the application using Docker Compose:
