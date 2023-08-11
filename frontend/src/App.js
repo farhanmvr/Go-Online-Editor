@@ -28,7 +28,6 @@ const App = () => {
       const data = response?.data;
       setExecResult(data);
     } catch (error) {
-      console.log(error);
       setExecResult({ error: "Unable to compile the code, please try again" });
     } finally {
       setIsExecuting(false);
@@ -99,7 +98,10 @@ const App = () => {
       </div>
       {isExecutionModalVisible && (
         <ExecutionList
-          onSelect={setCode}
+          onSelect={(val) => {
+            setExecResult({});
+            setCode(val);
+          }}
           isExecutionModalVisible={isExecutionModalVisible}
           setIsExecutionModalVisible={setIsExecutionModalVisible}
         />

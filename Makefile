@@ -31,14 +31,9 @@ start:
 	make frontend-build
 	docker-compose down
 	docker-compose up -d
-	@echo http://localhost:3333
-	docker logs -f go-editor-backend
-
-start-test:
-	make backend-build
-	docker-compose down
-	docker-compose up -d
-	docker logs -f go-editor-backend
+	@echo ###########################################################
+	@echo ## Click here to view the website: http://localhost:3333 ##
+	@echo ###########################################################
 
 stop:
 	docker-compose down
