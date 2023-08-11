@@ -1,7 +1,7 @@
 version: '3'
 services:
   go-editor-db:
-    image: mysql:8
+    image: mysql:8.1.0
     container_name: go-editor-db
     environment:
       MYSQL_ROOT_PASSWORD: root123
@@ -9,7 +9,7 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - ~/mysql-volume/lib/mysql:/var/lib/mysql
+      - ~/mysql-volume/lib/mysql/go-editor-db:/var/lib/mysql
   go-editor-backend:
     image: go-editor-backend:latest
     container_name: go-editor-backend
